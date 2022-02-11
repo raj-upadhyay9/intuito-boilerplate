@@ -1,5 +1,3 @@
+import placeholder from './images/placeholder.png';
 
-
-if(IS_DEVELOPMENT){
-    console.log('')
-}
+console.log(placeholder)
