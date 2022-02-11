@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin  = require('mini-css-extract-plugin');
-
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'dev';
 
 const dirApp = path.join(__dirname,'app')
@@ -18,6 +18,20 @@ module.exports = {
         path.join(dirApp,'index.js'),
         path.join(dirStyles,'index.scss')
     ],
+    optimization: {
+        minimizer: [
+          "...",
+          new ImageMinimizerPlugin({
+            minimizer: {
+              implementation: ImageMinimizerPlugin.squooshMinify,
+              options: {
+                // Your options for `squoosh`
+              },
+            },
+          }),
+        ],
+      },
+
     resolve:{
         modules:[
             dirApp,
@@ -78,6 +92,7 @@ module.exports = {
         },
         {
             test: /^.+\.(jpg|jpeg|png|gif|bmp|svg|webp)$/,
+            type: 'asset',
             loader: 'file-loader',
             options:{
                 name(file){
