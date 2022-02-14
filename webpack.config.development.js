@@ -1,7 +1,7 @@
-const {merge} = require('webpack-merge');
-const path = require('path');
+const { merge } = require('webpack-merge')
+const path = require('path')
 
-const config = require('./webpack.config');
+const config = require('./webpack.config')
 
 module.exports = merge(config, {
   mode: 'development',
@@ -9,12 +9,11 @@ module.exports = merge(config, {
   devServer: {
     port: 8080,
     devMiddleware: {
-    writeToDisk: true
-  }
+      writeToDisk: true
+    }
   },
   output: {
-    path : path.join(__dirname,'public'),
+    path: path.join(__dirname, 'public'),
     publicPath: '/public/'
   }
-},)
-
+})
