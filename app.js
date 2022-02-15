@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express')
+const prismic = require('@prismicio/client')
 const app = express()
 const port = 3000 || process.env.PORT
 const path = require('path')
@@ -23,7 +24,9 @@ app.get('/', async (req, res) => {
 })
 
 app.get('/about', async (req, res) => {
-  const about = await client.getByType('about')
+  const about = await client.get({
+    predicates: prismic.predicate.at('document.type', 'about')
+  })
   console.log(about)
 
   res.render('pages/about')
