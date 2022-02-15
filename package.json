@@ -49,8 +49,9 @@
     "@prismicio/client": "^6.2.0",
     "@prismicio/helpers": "^2.1.1",
     "express": "^4.17.2",
-    "node-fetch": "^3.2.0",
+    "node-fetch": "^2.6.7",
     "prismic-dom": "^2.2.7",
+    "prismic-javascript": "^3.0.2",
     "pug": "^3.0.2"
   }
 }
