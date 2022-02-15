@@ -24,12 +24,14 @@ app.get('/', async (req, res) => {
 })
 
 app.get('/about', async (req, res) => {
-  const about = await client.get({
-    predicates: prismic.predicate.at('document.type', 'about')
-  })
-  console.log(about)
+  const [about, meta] = await client.get({
+    predicates: prismic.predicate.any('document.type', ['about', 'meta'])
+  }).then(res => res.results).catch(err => console.log(err))
 
-  res.render('pages/about')
+  res.render('pages/about', {
+    about,
+    meta
+  })
 })
 
 app.get('/detail/:uid', (req, res) => {
