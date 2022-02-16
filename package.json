@@ -22,7 +22,7 @@
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.6.0",
     "dotenv": "^16.0.0",
-    "eslint": "^8.9.0",
+    "eslint": "^7.12.1",
     "eslint-config-standard": "^16.0.3",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.25.4",
@@ -48,7 +48,11 @@
   "dependencies": {
     "@prismicio/client": "^6.2.0",
     "@prismicio/helpers": "^2.1.1",
+    "body-parser": "^1.19.2",
+    "errorhandler": "^1.5.1",
     "express": "^4.17.2",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
     "node-fetch": "^2.6.7",
     "pug": "^3.0.2"
   }

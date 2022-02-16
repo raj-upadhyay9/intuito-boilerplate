@@ -14,7 +14,7 @@ const endpoint = process.env.PRISMIC_ENDPOINT // Format your endpoint.
 const routes = [
   {
     type: 'collection',
-    path: '/:uid'
+    path: '/detail/:uid'
   },
   {
     type: 'home',
