@@ -17,9 +17,7 @@ app.use((req, res, next) => {
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'views'))
 
-app.get('/', async (req, res) => {
-  const document = await client.getFirst()
-  console.log(document)
+app.get('/', (req, res) => {
   res.render('pages/home')
 })
 
@@ -28,6 +26,9 @@ app.get('/about', async (req, res) => {
     predicates: prismic.predicate.any('document.type', ['about', 'meta'])
   }).then(res => res.results).catch(err => console.log(err))
 
+  console.log(about.data.body.forEach(slice => {
+    console.log(slice)
+  }))
   res.render('pages/about', {
     about,
     meta
