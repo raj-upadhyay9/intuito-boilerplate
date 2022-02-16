@@ -26,9 +26,6 @@ app.get('/about', async (req, res) => {
     predicates: prismic.predicate.any('document.type', ['about', 'meta'])
   }).then(res => res.results).catch(err => console.log(err))
 
-  console.log(about.data.body.forEach(slice => {
-    console.log(slice)
-  }))
   res.render('pages/about', {
     about,
     meta
