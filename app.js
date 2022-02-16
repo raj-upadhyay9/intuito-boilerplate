@@ -14,7 +14,29 @@ const { client } = require('./config/prismicConfig.js')
 const app = express()
 const port = 3000 || process.env.PORT
 
+const handleRequest = async () => {
+  const navigation = await client.getSingle('navigation')
+  const meta = await client.getByType('meta')
+  const preloader = await client.getSingle('preloader')
+
+  return {
+    meta,
+    navigation,
+    preloader
+  }
+}
 const handleLinkResolver = (doc) => {
+  if (doc.type === 'product') {
+    return `/detail/${doc.slug}`
+  }
+
+  if (doc.type === 'collections') {
+    return '/collections'
+  }
+
+  if (doc.type === 'about') {
+    return '/about'
+  }
   return '/'
 }
 
@@ -28,7 +50,7 @@ app.use((req, res, next) => {
   res.locals.ctx = {
     prismicH
   }
-  res.locals.link = handleLinkResolver
+  res.locals.Link = handleLinkResolver
   res.locals.Numbers = index => {
     return index === 0 ? 'One' : index === 1 ? 'Two' : index === 2 ? 'Three' : index === 3 ? 'Four' : ''
   }
@@ -38,17 +60,32 @@ app.use((req, res, next) => {
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'views'))
 
-app.get('/', (req, res) => {
-  res.render('pages/home')
+app.get('/', async (req, res) => {
+  const home = await client.getSingle('home')
+  const defaults = await handleRequest()
+  const collections = await client.get({
+    predicates: prismic.predicate.at('document.type', 'collection'),
+    fetchLinks: 'product.image'
+  }).then(res => res.results).catch(err => console.log(err))
+
+  res.render('pages/home', {
+    ...defaults,
+    collections,
+    home
+
+  })
 })
 
 app.get('/about', async (req, res) => {
+  const defaults = await handleRequest()
+
   const preloader = await client.getSingle('preloader')
   const [about, meta] = await client.get({
     predicates: prismic.predicate.any('document.type', ['about', 'meta'])
   }).then(res => res.results).catch(err => console.log(err))
 
   res.render('pages/about', {
+    ...defaults,
     about,
     meta,
     preloader
@@ -69,6 +106,7 @@ app.get('/detail/:uid', async (req, res) => {
 
 app.get('/collections', async (req, res) => {
   const preloader = await client.getSingle('preloader')
+  const defaults = await handleRequest()
 
   const meta = await client.getSingle('meta')
   const home = await client.getSingle('home')
@@ -76,8 +114,8 @@ app.get('/collections', async (req, res) => {
     predicates: prismic.predicate.at('document.type', 'collection'),
     fetchLinks: 'product.image'
   }).then(res => res.results).catch(err => console.log(err))
-  console.log(collections.map(collection => collection.data.products[0].products_product))
   res.render('pages/collections', {
+    ...defaults,
     meta,
     collections,
     home,
