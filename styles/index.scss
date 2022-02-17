@@ -1,5 +1,20 @@
-$color-white : #fff;
+@import './utils/variables';
+@import './utils/functions';
+@import './utils/responsive';
+@import './utils/mixins';
+@import './utils/vendors';
 
-.class{
-  color:$color-white;
-}
+@import './base/reset';
+@import './base/typography.scss';
+@import './base/base';
+
+@import './pages/about/about';
+@import './pages/about/content';
+@import './pages/about/gallery';
+@import './pages/about/highlight';
+
+@import './pages/detail/detail';
+
+@import './pages/home/home';
+
+@import './pages/collections/collections'

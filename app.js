@@ -14,6 +14,8 @@ const { client } = require('./config/prismicConfig.js')
 const app = express()
 const port = 3000 || process.env.PORT
 
+app.use(express.static(path.join(__dirname, 'public')))
+
 const handleRequest = async () => {
   const navigation = await client.getSingle('navigation')
   const meta = await client.getByType('meta')
