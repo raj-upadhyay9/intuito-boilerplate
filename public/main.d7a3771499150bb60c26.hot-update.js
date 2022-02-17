@@ -1,0 +1,22 @@
+self["webpackHotUpdatefloema"]("main",{
+
+/***/ "./styles/index.scss":
+/*!***************************!*\
+  !*** ./styles/index.scss ***!
+  \***************************/
+/***/ (() => {
+
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nHookWebpackError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: The target selector was not found.\nUse \"@extend %description-16 !optional\" to avoid this error.\n  ╷\n2 │   @extend %description-16;\n  │   ^^^^^^^^^^^^^^^^^^^^^^^\n  ╵\n  styles\\base\\base.scss 2:3  root stylesheet\n    at tryRunOrWebpackError (D:\\projects\\floema\\node_modules\\webpack\\lib\\HookWebpackError.js:88:9)\n    at __webpack_require_module__ (D:\\projects\\floema\\node_modules\\webpack\\lib\\Compilation.js:5023:12)\n    at __webpack_require__ (D:\\projects\\floema\\node_modules\\webpack\\lib\\Compilation.js:4980:18)\n    at D:\\projects\\floema\\node_modules\\webpack\\lib\\Compilation.js:5051:20\n    at symbolIterator (D:\\projects\\floema\\node_modules\\neo-async\\async.js:3485:9)\n    at done (D:\\projects\\floema\\node_modules\\neo-async\\async.js:3527:9)\n    at Hook.eval [as callAsync] (eval at create (D:\\projects\\floema\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at D:\\projects\\floema\\node_modules\\webpack\\lib\\Compilation.js:4958:43\n    at symbolIterator (D:\\projects\\floema\\node_modules\\neo-async\\async.js:3482:9)\n    at timesSync (D:\\projects\\floema\\node_modules\\neo-async\\async.js:2297:7)\n-- inner error --\nError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: The target selector was not found.\nUse \"@extend %description-16 !optional\" to avoid this error.\n  ╷\n2 │   @extend %description-16;\n  │   ^^^^^^^^^^^^^^^^^^^^^^^\n  ╵\n  styles\\base\\base.scss 2:3  root stylesheet\n    at Object.<anonymous> (D:\\projects\\floema\\node_modules\\css-loader\\dist\\cjs.js!D:\\projects\\floema\\node_modules\\postcss-loader\\dist\\cjs.js!D:\\projects\\floema\\node_modules\\sass-loader\\dist\\cjs.js!D:\\projects\\floema\\styles\\index.scss:1:7)\n    at D:\\projects\\floema\\node_modules\\webpack\\lib\\javascript\\JavascriptModulesPlugin.js:432:11\n    at Hook.eval [as call] (eval at create (D:\\projects\\floema\\node_modules\\tapable\\lib\\HookCodeFactory.js:19:10), <anonymous>:7:1)\n    at D:\\projects\\floema\\node_modules\\webpack\\lib\\Compilation.js:5025:39\n    at tryRunOrWebpackError (D:\\projects\\floema\\node_modules\\webpack\\lib\\HookWebpackError.js:83:7)\n    at __webpack_require_module__ (D:\\projects\\floema\\node_modules\\webpack\\lib\\Compilation.js:5023:12)\n    at __webpack_require__ (D:\\projects\\floema\\node_modules\\webpack\\lib\\Compilation.js:4980:18)\n    at D:\\projects\\floema\\node_modules\\webpack\\lib\\Compilation.js:5051:20\n    at symbolIterator (D:\\projects\\floema\\node_modules\\neo-async\\async.js:3485:9)\n    at done (D:\\projects\\floema\\node_modules\\neo-async\\async.js:3527:9)\n\nGenerated code for D:\\projects\\floema\\node_modules\\css-loader\\dist\\cjs.js!D:\\projects\\floema\\node_modules\\postcss-loader\\dist\\cjs.js!D:\\projects\\floema\\node_modules\\sass-loader\\dist\\cjs.js!D:\\projects\\floema\\styles\\index.scss\n1 | throw new Error(\"Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\\nSassError: The target selector was not found.\\nUse \\\"@extend %description-16 !optional\\\" to avoid this error.\\n  ╷\\n2 │   @extend %description-16;\\n  │   ^^^^^^^^^^^^^^^^^^^^^^^\\n  ╵\\n  styles\\\\base\\\\base.scss 2:3  root stylesheet\");");
+
+/***/ })
+
+},
+/******/ function(__webpack_require__) { // webpackRuntimeModules
+/******/ /* webpack/runtime/getFullHash */
+/******/ (() => {
+/******/ 	__webpack_require__.h = () => ("30a0354ae4c59193c077")
+/******/ })();
+/******/ 
+/******/ }
+);
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5kN2EzNzcxNDk5MTUwYmI2MGMyNi5ob3QtdXBkYXRlLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7VUFBQSIsInNvdXJjZXMiOlsid2VicGFjazovL2Zsb2VtYS93ZWJwYWNrL3J1bnRpbWUvZ2V0RnVsbEhhc2giXSwic291cmNlc0NvbnRlbnQiOlsiX193ZWJwYWNrX3JlcXVpcmVfXy5oID0gKCkgPT4gKFwiMzBhMDM1NGFlNGM1OTE5M2MwNzdcIikiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=
